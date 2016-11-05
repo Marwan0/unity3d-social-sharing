@@ -12,15 +12,15 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && [activityVc respondsToSelector:@selector(popoverPresentationController)])
     {
-		[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:activityVc animated:YES completion:nil];
-	}
-	else
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:activityVc animated:YES completion:nil];
+    }
+    else
     {
-		UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:activityVc];
+        UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:activityVc];
 
-		[popup presentPopoverFromRect:CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/4, 0, 0)
-		inView:[UIApplication sharedApplication].keyWindow.rootViewController.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-	}
+        [popup presentPopoverFromRect:CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/4, 0, 0)
+        inView:[UIApplication sharedApplication].keyWindow.rootViewController.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
 }
 
 -(void) shareOnlyTextMethod: (const char *) shareMessage

@@ -67,17 +67,17 @@ namespace net.indigobunting.SocialSharing
 #endif
 
 #if UNITY_IOS
-			StartCoroutine(ScreenshotHandler.SaveExisting(pathToImage, true));
+            StartCoroutine(ScreenshotHandler.SaveExisting(pathToImage, true));
 #endif
         }
 
         private void OnScreenshotSaved(string path)
         {
 #if UNITY_IOS
-			string shareText = text;
+            string shareText = text;
             shareText += appStoreUrl;
 
-			GeneralSharingiOSBridge.ShareTextWithImage(path, shareText);
+            GeneralSharingiOSBridge.ShareTextWithImage(path, shareText);
 #endif
         }
     }

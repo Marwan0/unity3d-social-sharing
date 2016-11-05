@@ -17,7 +17,7 @@ namespace net.indigobunting.SocialSharing
         {
             yield return 0;
             bool photoSaved = false;
-		
+        
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
                 while (!photoSaved) 
