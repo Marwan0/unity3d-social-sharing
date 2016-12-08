@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Runtime.InteropServices;
 
-namespace net.indigobunting.SocialSharing
+namespace IndigoBunting.SocialSharing
 {
     public class GeneralSharingiOSBridge
     {

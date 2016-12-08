@@ -3,17 +3,17 @@ using System;
 using System.Collections;
 using System.Runtime.InteropServices;
 
-namespace net.indigobunting.SocialSharing
+namespace IndigoBunting.SocialSharing
 {
-    public class ScreenshotHandler : MonoBehaviour
+    public class IOSPhotoGalleryHandler : MonoBehaviour
     {
 #if UNITY_IOS
-        public static event Action<string> ImageFinishedSaving;
+        public static event Action<string> OnImageSaved;
 
         [DllImport("__Internal")]
         private static extern bool saveToGallery (string path);
 
-        public static IEnumerator SaveExisting(string filePath, bool callback = false)
+        public static IEnumerator SaveExisting(string filePath)
         {
             yield return 0;
             bool photoSaved = false;
@@ -29,7 +29,10 @@ namespace net.indigobunting.SocialSharing
                 UnityEngine.iOS.Device.SetNoBackupFlag(filePath);
             }
 
-            if (callback) ImageFinishedSaving(filePath);
+            if (OnImageSaved != null) 
+            { 
+                OnImageSaved(filePath);
+            }
         }
 #endif
     }

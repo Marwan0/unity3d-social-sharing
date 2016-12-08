@@ -26,15 +26,28 @@ Android
 ![ScreenShot](https://raw.githubusercontent.com/shlapkoff/unity3d-social-sharing/master/screenshots/screenshot-android-share.png)
 
 ## 3. Installation
-Unitypackage: [Download](https://github.com/shlapkoff/unity3d-social-sharing/releases/download/v.1.0.0/social-sharing.unitypackage)
+Unitypackage: [Download](https://github.com/shlapkoff/unity3d-social-sharing/releases/download/v.1.0.2/social-sharing.unitypackage)
 
 ## 4. Usage on iOS and Android
-1) Add SocialSharing script to your GameObject
+```
+public class Example : MonoBehaviour
+{
+    [SerializeField]
+    private SocialSharing socialSharing;
+    [SerializeField]
+    private string text;
+    [SerializeField]
+    private Texture2D texture2D;
 
-![ScreenShot](https://raw.githubusercontent.com/shlapkoff/unity3d-social-sharing/master/screenshots/screenshot-unity-install.png)
+    public void Click()
+    {
+        //Share text+screenshot
+        socialSharing.ShareScreenshot(text);
 
-2) Add Share() method to button
-
-![ScreenShot](https://raw.githubusercontent.com/shlapkoff/unity3d-social-sharing/master/screenshots/screenshot-unity-install-2.png)
+        //Share text+texture2D
+        socialSharing.ShareTexture2D(text, texture2D);
+    }
+}
+```
 
 
